@@ -1,0 +1,43 @@
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <button class="btn btn-primary my-3" [routerLink]="['/adduser']">Back</button>
+      <h6 class="m-0 font-weight-bold text-primary">Add user</h6>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+        <div class="form-group mb-3">
+          <label for="firstname">Firstname :</label>
+          <input type="text" id="firstname" formControlName="firstname" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+          <label for="lastname">Lastname :</label>
+          <input type="text" id="lastname" formControlName="lastname" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+          <label for="Cin">Cin :</label>
+          <input type="text" id="Cin" formControlName="Cin" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+          <label for="phonenumber">Phone :</label>
+          <input type="text" id="phonenumber" formControlName="phonenumber" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+          <label for="email">Email :</label>
+          <input type="email" id="email" formControlName="email" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+          <label for="password">Password :</label>
+          <input type="password" id="password" formControlName="password" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+          <label for="Image">Image :</label>
+          <input type="file" name="imageFile" (change)="onImageChange($event)" />
+        </div>
+        
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" [disabled]="addUserForm.invalid">Add User</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

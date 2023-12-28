@@ -25,9 +25,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.css",
+              "src/assets/startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.css",
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.js",
+              "src/assets/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.min.js",
+              "src/assets/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "870ac620-9546-45d2-893f-8e256a54c8ab"
   }
 }

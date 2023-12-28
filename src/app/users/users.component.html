@@ -1,0 +1,46 @@
+<!-- users.component.html -->
+
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">List of Users</h6>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Cin</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Phone</th>
+          <th>Image</th>
+          <th>Presence</th> 
+          <th>Heures de travail</th><!-- Nouvelle colonne pour la présence -->
+          <th *ngIf="currentUserEmail === 'kawtharbenselem123@gmail.com'">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of listUsers">
+          <td>{{ user.Cin }}</td>
+          <td>{{ user.firstname }}</td>
+          <td>{{ user.lastname }}</td>
+          <td>{{ user.phonenumber }}</td>
+          <td>
+            <img [src]="user.image" alt="User Image" style="max-width: 50px; max-height: 50px;">
+          </td>
+          <td>
+            <!-- Affiche la date de début et la date de fin -->
+            {{ user.presence.length > 0 ? user.presence[0].date : '-' }} - 
+            {{ user.presence.length > 0 ? user.presence[user.presence.length - 1].date : '-' }}
+           </td>
+           <td>
+            <!-- Affiche la différence en heures -->
+            {{ getHoursDifference(user.presence) }}
+          </td>
+          <td *ngIf="currentUserEmail === 'kawtharbenselem123@gmail.com'">
+            <button class="btn btn-primary" (click)="openDialog(user.$key)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
